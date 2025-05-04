@@ -37,7 +37,7 @@ public:
     virtual void Update(); //method that will update our object
     void Draw(); //will draw all the correct ellement
 
-    void Clean();
+    // void Clean();
 
     virtual bool ClickToggle(CRectangle _rec); //will check if the user has clicked ont he rec
 

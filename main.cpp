@@ -207,7 +207,6 @@ int main()
             ScrollOp.Update();
             ScrollOut.Update();
 
-            Output1.Clean(); //clean 0
             Output1.Draw();
 
         EndDrawing();
@@ -239,7 +238,6 @@ int main()
             result2 = InputProssessing(Input2.content, intBase2);
 
             std::string awns = OutputPrecessing(result1, result2, ScrollOp.content, intBaseOut);
-            std::cout << awns << std::endl;
             Output1.content = awns;
 
         }

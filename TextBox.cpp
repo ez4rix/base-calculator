@@ -27,10 +27,9 @@ void TextBox::Update()
 {
     mousePos = GetMousePosition(); //store the mouse Position in mouse_pos
 
-    rec.color = MouseEffect(rec); //set the color of the rec dynamicly 
+    rec.color = MouseEffect(rec); //set the color of the rec dynamicly
     Draw();
     ClickToggle(rec); //Check if user has clicked on the rec
-    Clean();
 
 }
 
@@ -56,23 +55,6 @@ bool TextBox::ClickToggle(CRectangle _rec)
     return false;
 }
 
-void TextBox::Clean()
-{
-    std::stringstream ss(content);
-    double value;
-    ss >> value;
-        
-    std::ostringstream result;
-    result.precision(15);  // To handle precision if needed
-    result << std::fixed << value;
-    // Remove trailing zeros and the decimal point if it's unnecessary
-    std::string result_str = result.str();
-    size_t found = result_str.find_last_not_of('0');
-    if (found != std::string::npos && result_str[found] == '.') {
-        result_str.erase(found);
-    }
-    content = result_str;
-}
 
 Color TextBox::MouseEffect(CRectangle _rec) //Change the color of the rec if the mouse is over it for better UI
 {
